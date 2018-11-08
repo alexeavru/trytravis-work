@@ -1,0 +1,10 @@
+packer/variables.json
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+*.retry
+secrets.*
+ansible/gce.ini
+jdauphant.nginx
+vault.key
