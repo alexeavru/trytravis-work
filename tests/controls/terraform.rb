@@ -7,7 +7,11 @@ control 'terraform' do
   impact 1
   title '**** Run terraform validation ****s'
 
-  describe command('terraform validate -var-file=terraform.tfvars.example terraform/stage/') do
+  describe command('terraform validate -var-file=terraform/stage/terraform.tfvars.example terraform/stage/') do
+    its('exit_status') { should eq 0 }
+  end
+
+  describe command('terraform validate -var-file=terraform/prod/terraform.tfvars.example terraform/prod/') do
     its('exit_status') { should eq 0 }
   end
 
