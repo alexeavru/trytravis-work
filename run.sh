@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 DOCKER_IMAGE=express42/otus-homeworks
 
 
