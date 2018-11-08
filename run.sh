@@ -11,6 +11,6 @@ docker run -d -v $(pwd):/srv -v /var/run/docker.sock:/tmp/docker.sock \
 # Show versions & run tests
 docker exec hw-test bash -c 'echo -=Get versions=-; ansible --version; ansible-lint --version; packer version; terraform version; tflint --version; docker version; docker-compose --version'
 echo 'START ANSIBLE-LINT'
-docker exec hw-test bash -c 'pwd; ls -la; ansible-lint -v ansible/*.yml'
+docker exec hw-test bash -c 'ansible-lint -v ansible/*.yml'
 # docker exec -e USER=appuser -e BRANCH=$BRANCH hw-test $HOMEWORK_RUN
 
