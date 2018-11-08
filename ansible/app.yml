@@ -21,12 +21,12 @@
         group: appuser
 
     - name: enable puma
-      systemd: 
-        name: puma 
+      systemd:
+        name: puma
         enabled: yes
 
   handlers:
   - name: reload puma
-    systemd: 
-      name: puma 
+    systemd:
+      name: puma
       state: restarted
