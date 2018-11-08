@@ -5,7 +5,7 @@ title 'packer validation'
 
 control 'packer' do
   impact 1
-  title 'Run packer validation'
+  title '**** Run packer validation ****'
 
   describe command('packer validate -var-file=packer/variables.json.example packer/app.json') do
     its('stdout') { should eq "Template validated successfully.\n" }
