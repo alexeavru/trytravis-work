@@ -1,7 +1,6 @@
 #!/bin/bash
-set -e
-
 DOCKER_IMAGE=express42/otus-homeworks
+TESTS_RUN=./trytravis-works/tests/run.sh
 
 
 # Prepare network & run container
@@ -13,13 +12,15 @@ docker run -d -v $(pwd):/srv -v /var/run/docker.sock:/tmp/docker.sock \
 # Show versions & run tests
 #docker exec hw-test bash -c 'echo -=Get versions=-; ansible --version; ansible-lint --version; packer version; terraform version; tflint --version; docker version; docker-compose --version'
 
-#echo 'START ANSIBLE-LINT'
+echo 'START ANSIBLE-LINT'
+docker exec -e USER=appuser hw-test $TESTS_RUN
+
 #docker exec hw-test bash -c 'ansible-lint -v ansible/*.yml'
 
-echo 'START PACKER VALIDATE'
+#echo 'START PACKER VALIDATE'
 #docker exec hw-test bash -c 'find packer -name "*.json" -exec packer validate -var-file=packer/variables.json.example {} \;'
 
-docker exec hw-test bash -c 'packer validate -var-file=packer/variables.json.example packer/ubuntu16.json; exit $?'
+#docker exec hw-test bash -c 'packer validate -var-file=packer/variables.json.example packer/ubuntu16.json; exit $?'
 
 # docker exec -e USER=appuser -e BRANCH=$BRANCH hw-test $HOMEWORK_RUN
 
