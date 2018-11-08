@@ -2,4 +2,4 @@
 set -e
 
 # Run InSpec
-inspec exec trytravis-work/tests
+inspec exec tests
