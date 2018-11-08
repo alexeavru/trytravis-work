@@ -1,6 +1,6 @@
 #!/bin/bash
 DOCKER_IMAGE=express42/otus-homeworks
-TESTS_RUN=./trytravis-works/tests/run.sh
+TESTS_RUN=./tests/run.sh
 
 
 # Prepare network & run container
