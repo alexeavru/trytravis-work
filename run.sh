@@ -17,6 +17,6 @@ docker run -d -v $(pwd):/srv -v /var/run/docker.sock:/tmp/docker.sock \
 #docker exec hw-test bash -c 'ansible-lint -v ansible/*.yml'
 
 echo 'START PACKER VALIDATE'
-docker exec -t -i hw-test bash -c 'find packer -name "*.json" -exec packer validate -var-file=packer/variables.json.example {} \;'
+docker exec hw-test bash -c 'find packer -name "*.json" -exec packer validate -var-file=packer/variables.json.example {} +'
 # docker exec -e USER=appuser -e BRANCH=$BRANCH hw-test $HOMEWORK_RUN
 
