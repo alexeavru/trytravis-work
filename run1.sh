@@ -46,10 +46,36 @@ cd $PROJECT_ROOT
 # Run TESTS
 echo '**** RUN TESTS ****'
 
+echo '*************************************************************'
+echo 'RUN PACKER TESTS'
+echo '*************************************************************'
 packer validate -var-file=packer/variables.json.example packer/app.json
 packer validate -var-file=packer/variables.json.example packer/db.json
 packer validate -var-file=packer/variables.json.example packer/immutable.json
 packer validate -var-file=packer/variables.json.example packer/ubuntu16.json
+
+echo '*************************************************************'
+echo 'RUN ANSIBLE-LINT TESTS'
+echo '*************************************************************'
+ansible-lint --exclude=roles/jdauphant.nginx ansible/playbooks/*.yml
+
+echo '*************************************************************'
+echo 'RUN TERRAFORM TEST'
+echo '*************************************************************'
+cd $ROOT_PROJECT/terraform/stage
+rm backend.tf
+mv terraform.tfvars.example terraform.tfvars
+terraform init
+terraform validate -check-variables=false
+tflint
+
+cd $ROOT_PROJECT/terraform/prod
+rm backend.tf
+mv terraform.tfvars.example terraform.tfvars
+terraform init
+terraform validate -check-variables=false
+tflint
+
 
 
 
