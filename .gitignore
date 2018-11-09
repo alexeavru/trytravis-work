@@ -4,6 +4,7 @@ packer/variables.json
 *.tfstate.backup
 *.tfvars
 *.retry
+.terraform
 secrets.*
 ansible/gce.ini
 jdauphant.nginx
