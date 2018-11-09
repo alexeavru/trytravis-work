@@ -18,8 +18,8 @@ ls -la
 sudo mv packer /usr/local/bin/
 sudo rm -f packer_*.zip
 
-echo 'Packer ver:'
-packer -v
+#echo 'Packer ver:'
+#packer -v
 
 
 
