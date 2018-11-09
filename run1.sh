@@ -57,6 +57,7 @@ echo '*************************************************************'
 cd $PROJECT_ROOT/terraform/stage
 rm backend.tf
 mv terraform.tfvars.example terraform.tfvars
+terraform get
 terraform init
 terraform validate -check-variables=false
 tflint
@@ -64,6 +65,7 @@ tflint
 cd $PROJECT_ROOT/terraform/prod
 rm backend.tf
 mv terraform.tfvars.example terraform.tfvars
+terraform get
 terraform init
 terraform validate -check-variables=false
 tflint
@@ -71,6 +73,7 @@ tflint
 echo '*************************************************************'
 echo 'RUN PACKER TESTS'
 echo '*************************************************************'
+cd $PROJECT_ROOT
 packer validate -var-file=packer/variables.json.example packer/app.json
 packer validate -var-file=packer/variables.json.example packer/db.json
 packer validate -var-file=packer/variables.json.example packer/immutable.json
