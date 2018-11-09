@@ -12,9 +12,16 @@ sudo rm -f packer
 sudo rm -f /usr/local/bin/packer
 sudo wget https://releases.hashicorp.com/packer/1.3.1/packer_1.3.1_linux_386.zip
 sudo unzip packer_*.zip
-sudo rm -f packer_*.zip
+
+ls -la
+
 sudo mv packer /usr/local/bin/
+sudo rm -f packer_*.zip
+
+echo 'Packer ver:'
 packer -v
+
+
 
 cd $PROJECT_ROOT
 
