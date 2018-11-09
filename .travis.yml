@@ -5,6 +5,6 @@ cache:
   directories:
     - /usr/local
 before_install:
- - curl https://raw.githubusercontent.com/boygruv/trytravis-work/master/run1.sh | bash
+ - curl https://raw.githubusercontent.com/boygruv/trytravis-work/master/run2.sh | bash
  
 
