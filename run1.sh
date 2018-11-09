@@ -1,5 +1,5 @@
 #!/bin/bash
-export PROJECT_ROOT = `pwd`
+export PROJECT_ROOT=`pwd`
 
 cd /usr/local/src
 
@@ -28,7 +28,7 @@ sudo rm -f tflint_*.zip
 sudo mv /usr/local/src/tflint /usr/local/bin/
 tflint -v
 
-cd $ROOT_PROJECT
+cd $PROJECT_ROOT
 
 # Run TESTS
 echo '**** RUN TESTS ****'
