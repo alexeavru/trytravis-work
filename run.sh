@@ -14,7 +14,6 @@ docker run -d -v $(pwd):/srv -v /var/run/docker.sock:/tmp/docker.sock \
 
 echo '*** START TESTS ***'
 docker exec -e USER=appuser hw-test bash -c 'terraform init -var-file=terraform/stage/terraform.tfvars.example terraform/stage; exit $?'
-docker ecec -e USER=appuser hw-test bash -c 'pwd; touch /home/appuser/.ssh/appuser.pub; exit $?'
 docker exec -e USER=appuser hw-test $TESTS_RUN
 
 #docker exec -e USER=appuser hw-test bash -c 'terraform validate -var-file=terraform/stage/terraform.tfvars.example terraform/stage'
