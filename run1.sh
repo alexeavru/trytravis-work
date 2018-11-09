@@ -11,7 +11,7 @@ sudo mv /usr/local/src/packer /usr/local/bin/
 packer -v
 
 # Install Ansible-lint
-sudo pip install ansible-lint
+sudo pip2 install ansible-lint
 ansible-lint --version
 
 # Install Terraform
