@@ -1,5 +1,5 @@
 #!/bin/bash
-export PROJECT_ROOT=`pwd`
+PROJECT_ROOT=`pwd`
 
 cd /usr/local/src
 
