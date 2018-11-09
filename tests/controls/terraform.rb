@@ -15,6 +15,10 @@ control 'terraform' do
     its('exit_status') { should eq 0 }
   end
 
+  describe command('teraform init -var-file=terraform/stage/terraform.tfvars.example terraform/stage') do
+    its('exit_status') { should eq 0 }
+  end
+
   describe command('terraform validate -check-variables=false terraform/stage') do
     its('exit_status') { should eq 0 }
   end
