@@ -7,9 +7,36 @@ control 'terraform' do
   impact 1
   title '**** Run terraform validation ****'
 
+  describe command('rm $ROOT_PROJECT/terraform/stage/backend.tf') do
+    its('exit_status') { should eq 0 }
+  end
+
+  describe command('rm $ROOT_PROJECT/terraform/prod/backend.tf') do
+    its('exit_status') { should eq 0 }
+  end
+
   describe command('terraform validate -check-variables=false terraform/stage') do
     its('exit_status') { should eq 0 }
   end
 
-end
+  describe command('terraform validate -check-variables=false terraform/prod') do
+    its('exit_status') { should eq 0 }
+  end
+
+  describe command('cd $ROOT_PROJECT/terraform/stage') do
+    its('exit_status') { should eq 0 }
+  end
+
+  describe command('tflint') do
+    its('exit_status') { should eq 0 }
+  end
+
+  describe command('cd $ROOT_PROJECT/terraform/prod') do
+    its('exit_status') { should eq 0 }
+  end
+
+  describe command('tflint') do
+    its('exit_status') { should eq 0 }
+  end
+
 
