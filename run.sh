@@ -15,6 +15,7 @@ docker exec hw-test bash -c 'echo -=Get versions=-; ansible --version; ansible-l
 echo '*** START TESTS ***'
 docker exec -e USER=appuser hw-test $TESTS_RUN
 
+docker exec hw-test bash -c 'terraform init; exit $?'
 docker exec hw-test bash -c 'terraform validate -var-file=terraform/stage/terraform.tfvars.example terraform/stage'
 
 #docker exec hw-test bash -c 'ansible-lint -v ansible/*.yml'
