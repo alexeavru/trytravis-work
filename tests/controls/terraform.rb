@@ -7,11 +7,11 @@ control 'terraform' do
   impact 1
   title '**** Run terraform validation ****'
 
-  describe command('rm $ROOT_PROJECT/terraform/stage/backend.tf') do
+  describe command('rm terraform/stage/backend.tf') do
     its('exit_status') { should eq 0 }
   end
 
-  describe command('rm $ROOT_PROJECT/terraform/prod/backend.tf') do
+  describe command('rm terraform/prod/backend.tf') do
     its('exit_status') { should eq 0 }
   end
 
