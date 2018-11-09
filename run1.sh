@@ -54,14 +54,14 @@ ansible-lint --exclude=roles/jdauphant.nginx ansible/playbooks/*.yml
 echo '*************************************************************'
 echo 'RUN TERRAFORM TEST'
 echo '*************************************************************'
-cd $ROOT_PROJECT/terraform/stage
+cd $PROJECT_ROOT/terraform/stage
 rm backend.tf
 mv terraform.tfvars.example terraform.tfvars
 terraform init
 terraform validate -check-variables=false
 tflint
 
-cd $ROOT_PROJECT/terraform/prod
+cd $PROJECT_ROOT/terraform/prod
 rm backend.tf
 mv terraform.tfvars.example terraform.tfvars
 terraform init
