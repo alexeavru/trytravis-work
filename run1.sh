@@ -28,8 +28,8 @@ echo 'MV PACKER'
 sudo mv packer /usr/local/bin/
 echo $?
 
-#sudo packer -v
-#echo $?
+/usr/local/bin/packer -v
+echo $?
 
 echo 'Step 111111111111111111111111111111111111111'
 
