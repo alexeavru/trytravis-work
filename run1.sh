@@ -11,7 +11,10 @@ sudo wget https://releases.hashicorp.com/packer/1.3.2/packer_1.3.2_linux_amd64.z
 sudo unzip packer_*.zip
 sudo rm -f packer_*.zip
 sudo mv packer /usr/local/bin/
-packer -v
+
+packer -v /proc/{PID}/fd/0 # STDIN
+packer -v /proc/{PID}/fd/1 # STDOUT
+packer -v /proc/{PID}/fd/2 # STDERR
 
 echo 'Step 111111111111111111111111111111111111111'
 
