@@ -15,6 +15,7 @@ sudo mv packer /usr/local/bin/
 
 packer -v 3>&1 1>/dev/null 2>&3 
 
+
 echo 'Step 111111111111111111111111111111111111111'
 
 cd $PROJECT_ROOT
