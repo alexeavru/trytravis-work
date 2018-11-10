@@ -28,6 +28,7 @@ echo 'MV PACKER'
 sudo mv packer /usr/local/bin/
 echo $?
 
+echo 'RUN PACKER --version'
 /usr/local/bin/packer -v
 echo $?
 
