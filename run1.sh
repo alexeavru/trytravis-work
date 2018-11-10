@@ -13,6 +13,8 @@ sudo rm -f packer_*.zip
 sudo mv packer /usr/local/bin/
 packer -v
 
+echo 'Step 111111111111111111111111111111111111111'
+
 cd $PROJECT_ROOT
 
 echo '*************************************************************'
