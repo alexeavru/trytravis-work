@@ -13,9 +13,7 @@ sudo rm -f packer_1.3.1_linux_386.zip
 sudo mv packer /usr/local/bin/
 sudo packer -v
 
-
 cd $PROJECT_ROOT
-
 
 echo '*************************************************************'
 echo 'RUN PACKER TESTS'
