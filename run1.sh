@@ -13,7 +13,7 @@ sudo rm -f packer_*.zip
 sudo mv packer /usr/local/bin/
 
 
-packer -v 2>&1 > /dev/null
+packer -v 3>&1 1>/dev/null 2>&3 
 
 echo 'Step 111111111111111111111111111111111111111'
 
