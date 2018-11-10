@@ -12,9 +12,7 @@ sudo unzip packer_*.zip
 sudo rm -f packer_*.zip
 sudo mv packer /usr/local/bin/
 
-packer -v /proc/{PID}/fd/0 # STDIN
-packer -v /proc/{PID}/fd/1 # STDOUT
-packer -v /proc/{PID}/fd/2 # STDERR
+packer -v 2>&1 > /dev/null
 
 echo 'Step 111111111111111111111111111111111111111'
 
