@@ -23,7 +23,6 @@ sudo rm -f packer_*.zip
 echo 'MV PACKER'
 sudo mv packer /usr/local/bin/
 
-
 PACKER=`packer -v`
 echo $PACKER
 
