@@ -28,8 +28,8 @@ echo 'MV PACKER'
 sudo mv packer /usr/local/bin/
 echo $?
 
-sudo packer -vs
-echo $?
+#sudo packer -v
+#echo $?
 
 echo 'Step 111111111111111111111111111111111111111'
 
@@ -40,9 +40,13 @@ echo 'RUN PACKER TESTS'
 echo '*************************************************************'
 cd $PROJECT_ROOT
 packer validate -var-file=packer/variables.json.example packer/app.json
+echo $?
 packer validate -var-file=packer/variables.json.example packer/db.json
+echo $?
 packer validate -var-file=packer/variables.json.example packer/immutable.json
+echo $?
 packer validate -var-file=packer/variables.json.example packer/ubuntu16.json
+echo $?
 
 echo '*************************************************************'
 echo 'END TESTS'
