@@ -12,6 +12,7 @@ sudo unzip packer_*.zip
 sudo rm -f packer_*.zip
 sudo mv packer /usr/local/bin/
 
+
 packer -v 2>&1 > /dev/null
 
 echo 'Step 111111111111111111111111111111111111111'
