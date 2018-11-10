@@ -7,6 +7,7 @@ echo '*************************************************************'
 echo 'Install Packer'
 echo '*************************************************************'
 # Install packer
+sudo rm -f /usr/local/bin/packer
 sudo wget https://releases.hashicorp.com/packer/1.3.2/packer_1.3.2_linux_amd64.zip
 sudo unzip packer_*.zip
 sudo rm -f packer_*.zip
