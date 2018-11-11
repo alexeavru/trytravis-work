@@ -52,35 +52,16 @@ echo '*************************************************************'
 ansible-lint --exclude=roles/jdauphant.nginx ansible/playbooks/*.yml
 
 echo '*************************************************************'
-echo 'RUN TERRAFORM TEST'
-echo '*************************************************************'
-cd $PROJECT_ROOT/terraform/stage
-rm backend.tf
-mv terraform.tfvars.example terraform.tfvars
-terraform get
-terraform init
-terraform validate -check-variables=false
-tflint
-
-cd $PROJECT_ROOT/terraform/prod
-rm backend.tf
-mv terraform.tfvars.example terraform.tfvars
-terraform get
-terraform init
-terraform validate -check-variables=false
-tflint
-
-echo '*************************************************************'
 echo 'RUN PACKER TESTS'
 echo '*************************************************************'
 cd $PROJECT_ROOT
-exec packer validate -var-file=packer/variables.json.example packer/app.json &
+packer validate -var-file=packer/variables.json.example packer/app.json &
 echo $?
-exec packer validate -var-file=packer/variables.json.example packer/db.json &
+packer validate -var-file=packer/variables.json.example packer/db.json &
 echo $?
-exec packer validate -var-file=packer/variables.json.example packer/immutable.json &
+packer validate -var-file=packer/variables.json.example packer/immutable.json &
 echo $?
-exec packer validate -var-file=packer/variables.json.example packer/ubuntu16.json &
+packer validate -var-file=packer/variables.json.example packer/ubuntu16.json &
 echo $?
 
 echo '*************************************************************'
