@@ -29,7 +29,7 @@ sudo mv packer /usr/local/bin/
 echo $?
 
 echo 'RUN PACKER --version'
-/usr/local/bin/packer -v
+exec /usr/local/bin/packer -v &
 echo $?
 
 echo 'Step 111111111111111111111111111111111111111'
