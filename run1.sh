@@ -38,8 +38,8 @@ sudo wget https://releases.hashicorp.com/packer/1.3.1/packer_1.3.1_linux_386.zip
 sudo unzip packer_1.3.1_linux_386.zip
 sudo rm -f packer_1.3.1_linux_386.zip
 sudo mv packer /usr/local/bin/
-exec packer -v &
-
+OUTPUT="$(packer -v)"
+echo $OUTPUT
 
 cd $PROJECT_ROOT
 
