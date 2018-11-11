@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 PROJECT_ROOT=`pwd`
 
 cd /usr/local/src
@@ -38,8 +39,7 @@ sudo wget https://releases.hashicorp.com/packer/1.3.1/packer_1.3.1_linux_386.zip
 sudo unzip packer_1.3.1_linux_386.zip
 sudo rm -f packer_1.3.1_linux_386.zip
 sudo mv packer /usr/local/bin/
-OUTPUT="$(packer -v)"
-echo $OUTPUT
+packer -v
 
 cd $PROJECT_ROOT
 
