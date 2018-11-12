@@ -57,20 +57,16 @@ echo 'RUN PACKER TESTS'
 echo '*************************************************************'
 cd $PROJECT_ROOT
 OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/app.json &)"
-echo $?
 echo "Check packer/app.json: $OUTPUT"
 
 OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/db.json &)"
-echo $?
 echo "Check packer/db.json: $OUTPUT"
 
 OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/immutable.json &)"
-echo $?
 echo "Check packer/immutable.json: $OUTPUT"
 
-OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/.json &)"
-echo $?
-echo "Check packer/immutable.json: $OUTPUT"
+OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/ubuntu16.json &)"
+echo "Check packer/ubuntu16.json: $OUTPUT"
 
 echo '*************************************************************'
 echo 'END TESTS'
