@@ -58,6 +58,11 @@ echo '*************************************************************'
 cd $PROJECT_ROOT
 OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/app.json &)"
 echo "Check packer/app.json: $OUTPUT"
+if [$OUTPUT -eq "Template validated successfully."]; then
+    echo "Check packer/app.json: $OUTPUT"
+else
+    exit 1
+fi
 
 OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/db.json &)"
 echo "Check packer/db.json: $OUTPUT"
