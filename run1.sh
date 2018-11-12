@@ -50,7 +50,7 @@ echo '**** RUN TESTS ****'
 echo '*************************************************************'
 echo 'RUN ANSIBLE-LINT TESTS'
 echo '*************************************************************'
-ansible-lint --exclude=roles/jdauphant.nginx ansible/playbooks/*.yml
+ansible-lint -v --exclude=roles/jdauphant.nginx ansible/playbooks/*.yml
 
 echo '*************************************************************'
 echo 'RUN PACKER TESTS'
