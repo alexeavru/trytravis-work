@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 PROJECT_ROOT=`pwd`
 
 cd /usr/local/src
