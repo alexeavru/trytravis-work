@@ -40,7 +40,7 @@ sudo unzip packer_*.zip
 sudo rm -f packer_*.zip
 sudo mv packer /usr/local/bin/
 OUTPUT="$(packer -v &)"
-echo $OUTPUT
+echo "Packer version: $OUTPUT"
 
 cd $PROJECT_ROOT
 
@@ -56,14 +56,14 @@ echo '*************************************************************'
 echo 'RUN PACKER TESTS'
 echo '*************************************************************'
 cd $PROJECT_ROOT
-packer validate -var-file=packer/variables.json.example packer/app.json
-echo $?
-packer validate -var-file=packer/variables.json.example packer/db.json
-echo $?
-packer validate -var-file=packer/variables.json.example packer/immutable.json
-echo $?
-packer validate -var-file=packer/variables.json.example packer/ubuntu16.json
-echo $?
+OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/app.json &)"
+echo $OUTPUT
+OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/db.json &)"
+echo $OUTPUT
+OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/immutable.json &)"
+echo $OUTPUT
+OUTPUT="$(packer validate -var-file=packer/variables.json.example packer/ubuntu16.json &)"
+echo $OUTPUT
 
 echo '*************************************************************'
 echo 'END TESTS'
